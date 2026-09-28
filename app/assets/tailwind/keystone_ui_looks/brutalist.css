@@ -1,0 +1,26 @@
+:root[data-look="brutalist"] {
+  --ks-radius-control: 0;
+  --ks-radius-surface: 0;
+  --ks-radius-pill: 0;
+  --ks-border-width: 3px;
+  --ks-border-width-control: 3px;
+  --ks-font-weight-strong: 800;
+  --ks-font-weight-heading: 800;
+  --ks-font-weight-medium: 700;
+  --ks-shadow-surface: none;
+  --ks-shadow-surface-dark: none;
+  --ks-shadow-overlay: none;
+  --ks-shadow-menu: none;
+  --ks-color-text: #000000;
+  --ks-color-text-dark: #ffffff;
+  --ks-color-surface: #ffffff;
+  --ks-color-surface-dark: #000000;
+  --ks-color-border: #000000;
+  --ks-color-border-dark: #ffffff;
+  --ks-color-accent: #000000;
+  --ks-color-accent-hover: #262626;
+  --ks-color-on-fill: #ffffff;
+  --ks-color-accent-dark: #ffffff;
+  --ks-color-accent-hover-dark: #d4d4d4;
+  --ks-color-on-fill-dark: #000000;
+}
