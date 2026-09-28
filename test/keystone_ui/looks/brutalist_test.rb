@@ -22,6 +22,10 @@ class KeystoneUi::Looks::BrutalistTest < Minitest::Test
     assert_equal({ "--ks-font-weight-strong" => "800", "--ks-font-weight-heading" => "800", "--ks-font-weight-medium" => "700" }, declarations.slice("--ks-font-weight-strong", "--ks-font-weight-heading", "--ks-font-weight-medium"))
   end
 
+  def test_the_look_draws_no_shadows
+    assert_equal({ "--ks-shadow-surface" => "none", "--ks-shadow-surface-dark" => "none", "--ks-shadow-overlay" => "none", "--ks-shadow-menu" => "none" }, declarations.slice("--ks-shadow-surface", "--ks-shadow-surface-dark", "--ks-shadow-overlay", "--ks-shadow-menu"))
+  end
+
   private
 
   def declarations

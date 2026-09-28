@@ -7,4 +7,8 @@
   --ks-font-weight-strong: 800;
   --ks-font-weight-heading: 800;
   --ks-font-weight-medium: 700;
+  --ks-shadow-surface: none;
+  --ks-shadow-surface-dark: none;
+  --ks-shadow-overlay: none;
+  --ks-shadow-menu: none;
 }
