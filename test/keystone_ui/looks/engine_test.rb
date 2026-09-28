@@ -23,4 +23,10 @@ class KeystoneUi::Looks::EngineTest < Minitest::Test
       .bind(KeystoneUi::Looks::Engine.instance)
       .run(nil)
   end
+
+  def test_booting_leaves_the_apps_default_look_alone
+    boot
+
+    assert_nil KeystoneUi.configuration.default_look
+  end
 end
