@@ -10,6 +10,10 @@ class KeystoneUi::Looks::RoundedTest < Minitest::Test
     assert_nil KeystoneUi::LookCheck.new(looks: { "rounded" => FILE }, default: nil).call
   end
 
+  def test_the_look_shapes_buttons_as_pills
+    assert_equal({ "--ks-radius-control" => "9999px" }, declarations.slice("--ks-radius-control"))
+  end
+
   private
 
   def declarations
