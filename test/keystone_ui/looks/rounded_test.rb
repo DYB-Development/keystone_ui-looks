@@ -26,6 +26,10 @@ class KeystoneUi::Looks::RoundedTest < Minitest::Test
     assert_equal({ "--ks-font-weight-strong" => "500", "--ks-font-weight-heading" => "500", "--ks-font-weight-medium" => "500" }, declarations.slice("--ks-font-weight-strong", "--ks-font-weight-heading", "--ks-font-weight-medium"))
   end
 
+  def test_the_look_names_roboto_with_a_system_fallback
+    assert_equal({ "--ks-font-body" => "Roboto, system-ui, sans-serif" }, declarations.slice("--ks-font-body"))
+  end
+
   private
 
   def declarations
