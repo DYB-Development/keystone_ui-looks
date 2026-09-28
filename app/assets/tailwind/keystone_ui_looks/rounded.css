@@ -1,0 +1,16 @@
+:root[data-look="rounded"] {
+  --ks-radius-control: 9999px;
+  --ks-color-accent: #6750a4;
+  --ks-color-accent-hover: #7965af;
+  --ks-color-on-fill: #ffffff;
+  --ks-shadow-surface: 0 1px 2px rgb(0 0 0 / 0.3), 0 1px 3px 1px rgb(0 0 0 / 0.15);
+  --ks-shadow-menu: 0 1px 2px rgb(0 0 0 / 0.3), 0 2px 6px 2px rgb(0 0 0 / 0.15);
+  --ks-shadow-overlay: 0 1px 3px rgb(0 0 0 / 0.3), 0 4px 8px 3px rgb(0 0 0 / 0.15);
+  --ks-font-weight-strong: 500;
+  --ks-font-weight-heading: 500;
+  --ks-font-weight-medium: 500;
+  --ks-font-body: Roboto, system-ui, sans-serif;
+  --ks-color-accent-dark: #d0bcff;
+  --ks-color-accent-hover-dark: #e8def8;
+  --ks-color-on-fill-dark: #381e72;
+}
