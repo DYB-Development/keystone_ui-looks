@@ -17,4 +17,7 @@
   --ks-color-surface-dark: #000000;
   --ks-color-border: #000000;
   --ks-color-border-dark: #ffffff;
+  --ks-color-accent: #000000;
+  --ks-color-accent-hover: #262626;
+  --ks-color-on-fill: #ffffff;
 }

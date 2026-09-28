@@ -30,6 +30,10 @@ class KeystoneUi::Looks::BrutalistTest < Minitest::Test
     assert_equal({ "--ks-color-text" => "#000000", "--ks-color-text-dark" => "#ffffff", "--ks-color-surface" => "#ffffff", "--ks-color-surface-dark" => "#000000", "--ks-color-border" => "#000000", "--ks-color-border-dark" => "#ffffff" }, declarations.slice("--ks-color-text", "--ks-color-text-dark", "--ks-color-surface", "--ks-color-surface-dark", "--ks-color-border", "--ks-color-border-dark"))
   end
 
+  def test_the_look_fills_controls_in_black_with_white_labels
+    assert_equal({ "--ks-color-accent" => "#000000", "--ks-color-accent-hover" => "#262626", "--ks-color-on-fill" => "#ffffff" }, declarations.slice("--ks-color-accent", "--ks-color-accent-hover", "--ks-color-on-fill"))
+  end
+
   private
 
   def declarations
