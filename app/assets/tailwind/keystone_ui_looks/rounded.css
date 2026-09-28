@@ -1,3 +1,6 @@
 :root[data-look="rounded"] {
   --ks-radius-control: 9999px;
+  --ks-color-accent: #6750a4;
+  --ks-color-accent-hover: #7965af;
+  --ks-color-on-fill: #ffffff;
 }

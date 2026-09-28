@@ -14,6 +14,10 @@ class KeystoneUi::Looks::RoundedTest < Minitest::Test
     assert_equal({ "--ks-radius-control" => "9999px" }, declarations.slice("--ks-radius-control"))
   end
 
+  def test_the_look_fills_controls_in_purple
+    assert_equal({ "--ks-color-accent" => "#6750a4", "--ks-color-accent-hover" => "#7965af", "--ks-color-on-fill" => "#ffffff" }, declarations.slice("--ks-color-accent", "--ks-color-accent-hover", "--ks-color-on-fill"))
+  end
+
   private
 
   def declarations
