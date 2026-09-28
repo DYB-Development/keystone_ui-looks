@@ -34,6 +34,12 @@ class KeystoneUi::Looks::BrutalistTest < Minitest::Test
     assert_equal({ "--ks-color-accent" => "#000000", "--ks-color-accent-hover" => "#262626", "--ks-color-on-fill" => "#ffffff" }, declarations.slice("--ks-color-accent", "--ks-color-accent-hover", "--ks-color-on-fill"))
   end
 
+  def test_every_colour_the_look_sets_has_a_dark_partner
+    colours = declarations.keys.grep(/\A--ks-color-/).reject { |name| name.end_with?("-dark") }
+
+    assert_empty colours.reject { |name| declarations.key?("#{name}-dark") }
+  end
+
   private
 
   def declarations

@@ -20,4 +20,7 @@
   --ks-color-accent: #000000;
   --ks-color-accent-hover: #262626;
   --ks-color-on-fill: #ffffff;
+  --ks-color-accent-dark: #ffffff;
+  --ks-color-accent-hover-dark: #d4d4d4;
+  --ks-color-on-fill-dark: #000000;
 }
