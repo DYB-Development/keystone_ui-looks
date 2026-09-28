@@ -14,6 +14,10 @@ class KeystoneUi::Looks::BrutalistTest < Minitest::Test
     assert_equal({ "--ks-radius-control" => "0", "--ks-radius-surface" => "0", "--ks-radius-pill" => "0" }, declarations.slice("--ks-radius-control", "--ks-radius-surface", "--ks-radius-pill"))
   end
 
+  def test_the_look_draws_thick_borders
+    assert_equal({ "--ks-border-width" => "3px", "--ks-border-width-control" => "3px" }, declarations.slice("--ks-border-width", "--ks-border-width-control"))
+  end
+
   private
 
   def declarations

@@ -2,4 +2,6 @@
   --ks-radius-control: 0;
   --ks-radius-surface: 0;
   --ks-radius-pill: 0;
+  --ks-border-width: 3px;
+  --ks-border-width-control: 3px;
 }
