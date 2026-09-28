@@ -10,6 +10,7 @@ module KeystoneUi
       initializer "keystone_ui_looks.register" do
         KeystoneUi.configure do |config|
           config.register_look :brutalist, root.join("app/assets/tailwind/keystone_ui_looks/brutalist.css")
+          config.register_look :rounded, root.join("app/assets/tailwind/keystone_ui_looks/rounded.css")
         end
       end
     end

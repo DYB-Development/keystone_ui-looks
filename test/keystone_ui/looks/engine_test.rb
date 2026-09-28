@@ -15,6 +15,12 @@ class KeystoneUi::Looks::EngineTest < Minitest::Test
     assert_equal KeystoneUi::Looks::Engine.root.join("app/assets/tailwind/keystone_ui_looks/brutalist.css").to_s, KeystoneUi.configuration.looks["brutalist"]
   end
 
+  def test_booting_registers_the_rounded_look
+    boot
+
+    assert_equal KeystoneUi::Looks::Engine.root.join("app/assets/tailwind/keystone_ui_looks/rounded.css").to_s, KeystoneUi.configuration.looks["rounded"]
+  end
+
   private
 
   def boot
