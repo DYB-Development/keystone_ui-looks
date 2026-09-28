@@ -10,4 +10,7 @@
   --ks-font-weight-heading: 500;
   --ks-font-weight-medium: 500;
   --ks-font-body: Roboto, system-ui, sans-serif;
+  --ks-color-accent-dark: #d0bcff;
+  --ks-color-accent-hover-dark: #e8def8;
+  --ks-color-on-fill-dark: #381e72;
 }

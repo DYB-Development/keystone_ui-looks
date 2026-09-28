@@ -30,6 +30,12 @@ class KeystoneUi::Looks::RoundedTest < Minitest::Test
     assert_equal({ "--ks-font-body" => "Roboto, system-ui, sans-serif" }, declarations.slice("--ks-font-body"))
   end
 
+  def test_every_colour_the_look_sets_has_a_dark_partner
+    colours = declarations.keys.grep(/\A--ks-color-/).reject { |name| name.end_with?("-dark") }
+
+    assert_empty colours.reject { |name| declarations.key?("#{name}-dark") }
+  end
+
   private
 
   def declarations
