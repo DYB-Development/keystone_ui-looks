@@ -26,6 +26,10 @@ class KeystoneUi::Looks::BrutalistTest < Minitest::Test
     assert_equal({ "--ks-shadow-surface" => "none", "--ks-shadow-surface-dark" => "none", "--ks-shadow-overlay" => "none", "--ks-shadow-menu" => "none" }, declarations.slice("--ks-shadow-surface", "--ks-shadow-surface-dark", "--ks-shadow-overlay", "--ks-shadow-menu"))
   end
 
+  def test_the_look_draws_black_on_white_and_white_on_black
+    assert_equal({ "--ks-color-text" => "#000000", "--ks-color-text-dark" => "#ffffff", "--ks-color-surface" => "#ffffff", "--ks-color-surface-dark" => "#000000", "--ks-color-border" => "#000000", "--ks-color-border-dark" => "#ffffff" }, declarations.slice("--ks-color-text", "--ks-color-text-dark", "--ks-color-surface", "--ks-color-surface-dark", "--ks-color-border", "--ks-color-border-dark"))
+  end
+
   private
 
   def declarations

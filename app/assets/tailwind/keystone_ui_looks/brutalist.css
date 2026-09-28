@@ -11,4 +11,10 @@
   --ks-shadow-surface-dark: none;
   --ks-shadow-overlay: none;
   --ks-shadow-menu: none;
+  --ks-color-text: #000000;
+  --ks-color-text-dark: #ffffff;
+  --ks-color-surface: #ffffff;
+  --ks-color-surface-dark: #000000;
+  --ks-color-border: #000000;
+  --ks-color-border-dark: #ffffff;
 }
