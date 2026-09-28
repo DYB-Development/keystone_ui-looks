@@ -22,6 +22,10 @@ class KeystoneUi::Looks::RoundedTest < Minitest::Test
     assert_equal({ "--ks-shadow-surface" => "0 1px 2px rgb(0 0 0 / 0.3), 0 1px 3px 1px rgb(0 0 0 / 0.15)", "--ks-shadow-menu" => "0 1px 2px rgb(0 0 0 / 0.3), 0 2px 6px 2px rgb(0 0 0 / 0.15)", "--ks-shadow-overlay" => "0 1px 3px rgb(0 0 0 / 0.3), 0 4px 8px 3px rgb(0 0 0 / 0.15)" }, declarations.slice("--ks-shadow-surface", "--ks-shadow-menu", "--ks-shadow-overlay"))
   end
 
+  def test_the_look_uses_medium_weights
+    assert_equal({ "--ks-font-weight-strong" => "500", "--ks-font-weight-heading" => "500", "--ks-font-weight-medium" => "500" }, declarations.slice("--ks-font-weight-strong", "--ks-font-weight-heading", "--ks-font-weight-medium"))
+  end
+
   private
 
   def declarations
