@@ -3,4 +3,7 @@
   --ks-color-accent: #6750a4;
   --ks-color-accent-hover: #7965af;
   --ks-color-on-fill: #ffffff;
+  --ks-shadow-surface: 0 1px 2px rgb(0 0 0 / 0.3), 0 1px 3px 1px rgb(0 0 0 / 0.15);
+  --ks-shadow-menu: 0 1px 2px rgb(0 0 0 / 0.3), 0 2px 6px 2px rgb(0 0 0 / 0.15);
+  --ks-shadow-overlay: 0 1px 3px rgb(0 0 0 / 0.3), 0 4px 8px 3px rgb(0 0 0 / 0.15);
 }

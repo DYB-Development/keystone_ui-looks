@@ -18,6 +18,10 @@ class KeystoneUi::Looks::RoundedTest < Minitest::Test
     assert_equal({ "--ks-color-accent" => "#6750a4", "--ks-color-accent-hover" => "#7965af", "--ks-color-on-fill" => "#ffffff" }, declarations.slice("--ks-color-accent", "--ks-color-accent-hover", "--ks-color-on-fill"))
   end
 
+  def test_the_look_lifts_surfaces_with_soft_shadows
+    assert_equal({ "--ks-shadow-surface" => "0 1px 2px rgb(0 0 0 / 0.3), 0 1px 3px 1px rgb(0 0 0 / 0.15)", "--ks-shadow-menu" => "0 1px 2px rgb(0 0 0 / 0.3), 0 2px 6px 2px rgb(0 0 0 / 0.15)", "--ks-shadow-overlay" => "0 1px 3px rgb(0 0 0 / 0.3), 0 4px 8px 3px rgb(0 0 0 / 0.15)" }, declarations.slice("--ks-shadow-surface", "--ks-shadow-menu", "--ks-shadow-overlay"))
+  end
+
   private
 
   def declarations
