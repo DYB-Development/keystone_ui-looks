@@ -1,3 +1,5 @@
 :root[data-look="brutalist"] {
   --ks-radius-control: 0;
+  --ks-radius-surface: 0;
+  --ks-radius-pill: 0;
 }

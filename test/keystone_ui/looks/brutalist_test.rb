@@ -10,6 +10,10 @@ class KeystoneUi::Looks::BrutalistTest < Minitest::Test
     assert_nil KeystoneUi::LookCheck.new(looks: { "brutalist" => FILE }, default: nil).call
   end
 
+  def test_the_look_squares_every_corner
+    assert_equal({ "--ks-radius-control" => "0", "--ks-radius-surface" => "0", "--ks-radius-pill" => "0" }, declarations.slice("--ks-radius-control", "--ks-radius-surface", "--ks-radius-pill"))
+  end
+
   private
 
   def declarations
