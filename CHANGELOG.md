@@ -2,6 +2,10 @@
 
 ## [Unreleased]
 
+### Added
+- The test suite fails, naming the look and the variable, when a look sets a `--ks-` variable the installed keystone_ui-styles does not define, or a colour without its dark partner.
+- CI runs daily against the newest keystone_ui-styles, so a renamed variable there fails the looks gem's CI without a change here.
+
 ## [0.2.0] - 2026-09-28
 
 ### Added
