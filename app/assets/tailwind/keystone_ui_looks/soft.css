@@ -4,4 +4,7 @@
   --ks-font-body: -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
   --ks-color-border: rgb(0 0 0 / 0.08);
   --ks-spacing: 0.3125rem;
+  --ks-color-accent: #007aff;
+  --ks-color-accent-hover: #3395ff;
+  --ks-color-on-fill: #ffffff;
 }

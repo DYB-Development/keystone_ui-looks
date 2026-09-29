@@ -26,6 +26,10 @@ class KeystoneUi::Looks::SoftTest < Minitest::Test
     assert_equal({ "--ks-spacing" => "0.3125rem" }, declarations.slice("--ks-spacing"))
   end
 
+  def test_the_look_fills_controls_in_system_blue
+    assert_equal({ "--ks-color-accent" => "#007aff", "--ks-color-accent-hover" => "#3395ff", "--ks-color-on-fill" => "#ffffff" }, declarations.slice("--ks-color-accent", "--ks-color-accent-hover", "--ks-color-on-fill"))
+  end
+
   private
 
   def declarations
