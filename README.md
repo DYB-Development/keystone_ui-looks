@@ -25,6 +25,7 @@ or a user or account picks one through keystone_ui-colors.
 |---|---|
 | `brutalist` | Square corners, thick black or white borders, bold weights, no shadows, and black on white (white on black on a dark page). |
 | `rounded` | Follows Google's Material: pill-shaped buttons, a purple accent, soft shadows, medium weights and Roboto, falling back to the system sans-serif font when the app does not load Roboto. |
+| `soft` | Follows Apple: large rounded corners, the device's system font, faint borders, wider spacing and a system blue accent. |
 
 A look sets only the component accent variables, so an app's own classes that
 read the accent scale keep the accent a user or account picked.
