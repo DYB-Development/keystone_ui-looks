@@ -21,6 +21,12 @@ class KeystoneUi::Looks::EngineTest < Minitest::Test
     assert_equal KeystoneUi::Looks::Engine.root.join("app/assets/tailwind/keystone_ui_looks/rounded.css").to_s, KeystoneUi.configuration.looks["rounded"]
   end
 
+  def test_booting_registers_the_soft_look
+    boot
+
+    assert_equal KeystoneUi::Looks::Engine.root.join("app/assets/tailwind/keystone_ui_looks/soft.css").to_s, KeystoneUi.configuration.looks["soft"]
+  end
+
   private
 
   def boot
