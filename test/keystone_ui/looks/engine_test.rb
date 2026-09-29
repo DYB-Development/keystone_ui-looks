@@ -39,6 +39,12 @@ class KeystoneUi::Looks::EngineTest < Minitest::Test
     assert_equal KeystoneUi::Looks::Engine::LOOKS, KeystoneUi.configuration.looks.keys
   end
 
+  def test_booting_leaves_the_apps_default_look_alone
+    boot
+
+    assert_nil KeystoneUi.configuration.default_look
+  end
+
   private
 
   def boot
@@ -46,11 +52,5 @@ class KeystoneUi::Looks::EngineTest < Minitest::Test
       .find { |initializer| initializer.name == "keystone_ui_looks.register" }
       .bind(KeystoneUi::Looks::Engine.instance)
       .run(nil)
-  end
-
-  def test_booting_leaves_the_apps_default_look_alone
-    boot
-
-    assert_nil KeystoneUi.configuration.default_look
   end
 end
