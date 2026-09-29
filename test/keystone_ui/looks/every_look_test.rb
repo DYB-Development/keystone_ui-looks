@@ -13,6 +13,14 @@ class KeystoneUi::Looks::EveryLookTest < Minitest::Test
     assert_equal({}, unknown)
   end
 
+  def test_every_colour_a_look_sets_has_a_dark_partner
+    missing = declarations_by_look.transform_values do |declarations|
+      declarations.keys.grep(/\A--ks-color-/).reject { |name| name.end_with?("-dark") || declarations.key?("#{name}-dark") }
+    end
+
+    assert_equal({}, missing.reject { |_, names| names.empty? })
+  end
+
   private
 
   def declarations_by_look
