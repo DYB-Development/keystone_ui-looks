@@ -27,6 +27,12 @@ class KeystoneUi::Looks::EngineTest < Minitest::Test
     assert_equal KeystoneUi::Looks::Engine.root.join("app/assets/tailwind/keystone_ui_looks/soft.css").to_s, KeystoneUi.configuration.looks["soft"]
   end
 
+  def test_booting_registers_the_compact_look
+    boot
+
+    assert_equal KeystoneUi::Looks::Engine.root.join("app/assets/tailwind/keystone_ui_looks/compact.css").to_s, KeystoneUi.configuration.looks["compact"]
+  end
+
   private
 
   def boot
