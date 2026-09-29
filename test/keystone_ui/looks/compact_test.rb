@@ -18,6 +18,10 @@ class KeystoneUi::Looks::CompactTest < Minitest::Test
     assert_equal({ "--ks-color-accent" => "#0c66e4", "--ks-color-accent-hover" => "#0055cc", "--ks-color-on-fill" => "#ffffff" }, declarations.slice("--ks-color-accent", "--ks-color-accent-hover", "--ks-color-on-fill"))
   end
 
+  def test_the_look_draws_thin_light_grey_borders
+    assert_equal({ "--ks-border-width" => "1px", "--ks-color-border" => "#dcdfe4" }, declarations.slice("--ks-border-width", "--ks-color-border"))
+  end
+
   private
 
   def declarations

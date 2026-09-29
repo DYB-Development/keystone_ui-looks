@@ -4,4 +4,6 @@
   --ks-color-accent: #0c66e4;
   --ks-color-accent-hover: #0055cc;
   --ks-color-on-fill: #ffffff;
+  --ks-border-width: 1px;
+  --ks-color-border: #dcdfe4;
 }
