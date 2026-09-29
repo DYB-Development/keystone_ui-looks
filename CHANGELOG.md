@@ -2,7 +2,7 @@
 
 ## [Unreleased]
 
-## [0.2.0] - 2026-09-29
+## [0.2.0] - 2026-09-28
 
 ### Added
 - The `compact` look, which follows Atlassian: small 3px corners, a blue accent, thin light grey borders and tight spacing, with a dark value for every colour.
