@@ -1,0 +1,14 @@
+:root[data-look="compact"] {
+  --ks-radius-control: 3px;
+  --ks-radius-surface: 3px;
+  --ks-color-accent: #0c66e4;
+  --ks-color-accent-hover: #0055cc;
+  --ks-color-on-fill: #ffffff;
+  --ks-border-width: 1px;
+  --ks-color-border: #dcdfe4;
+  --ks-spacing: 0.2rem;
+  --ks-color-accent-dark: #579dff;
+  --ks-color-accent-hover-dark: #85b8ff;
+  --ks-color-on-fill-dark: #1d2125;
+  --ks-color-border-dark: #a6c5e229;
+}

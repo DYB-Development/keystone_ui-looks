@@ -24,6 +24,7 @@ or a user or account picks one through keystone_ui-colors.
 | Name | What it looks like |
 |---|---|
 | `brutalist` | Square corners, thick black or white borders, bold weights, no shadows, and black on white (white on black on a dark page). |
+| `compact` | Follows Atlassian: small 3px corners, a blue accent, thin light grey borders and tight spacing. |
 | `rounded` | Follows Google's Material: pill-shaped buttons, a purple accent, soft shadows, medium weights and Roboto, falling back to the system sans-serif font when the app does not load Roboto. |
 | `soft` | Follows Apple: large rounded corners, the device's system font, faint borders, wider spacing and a system blue accent. |
 
