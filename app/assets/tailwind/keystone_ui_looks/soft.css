@@ -3,4 +3,5 @@
   --ks-radius-surface: 1rem;
   --ks-font-body: -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
   --ks-color-border: rgb(0 0 0 / 0.08);
+  --ks-spacing: 0.3125rem;
 }
