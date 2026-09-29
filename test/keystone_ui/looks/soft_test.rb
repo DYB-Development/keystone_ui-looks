@@ -10,6 +10,10 @@ class KeystoneUi::Looks::SoftTest < Minitest::Test
     assert_nil KeystoneUi::LookCheck.new(looks: { "soft" => FILE }, default: nil).call
   end
 
+  def test_the_look_rounds_surfaces_with_a_large_radius
+    assert_equal({ "--ks-radius-surface" => "1rem" }, declarations.slice("--ks-radius-surface"))
+  end
+
   private
 
   def declarations
