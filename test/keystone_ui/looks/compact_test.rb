@@ -14,6 +14,10 @@ class KeystoneUi::Looks::CompactTest < Minitest::Test
     assert_equal({ "--ks-radius-surface" => "3px" }, declarations.slice("--ks-radius-surface"))
   end
 
+  def test_the_look_fills_controls_in_blue
+    assert_equal({ "--ks-color-accent" => "#0c66e4", "--ks-color-accent-hover" => "#0055cc", "--ks-color-on-fill" => "#ffffff" }, declarations.slice("--ks-color-accent", "--ks-color-accent-hover", "--ks-color-on-fill"))
+  end
+
   private
 
   def declarations

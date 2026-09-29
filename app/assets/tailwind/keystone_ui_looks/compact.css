@@ -1,4 +1,7 @@
 :root[data-look="compact"] {
   --ks-radius-control: 3px;
   --ks-radius-surface: 3px;
+  --ks-color-accent: #0c66e4;
+  --ks-color-accent-hover: #0055cc;
+  --ks-color-on-fill: #ffffff;
 }
