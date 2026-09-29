@@ -7,4 +7,8 @@
   --ks-border-width: 1px;
   --ks-color-border: #dcdfe4;
   --ks-spacing: 0.2rem;
+  --ks-color-accent-dark: #579dff;
+  --ks-color-accent-hover-dark: #85b8ff;
+  --ks-color-on-fill-dark: #1d2125;
+  --ks-color-border-dark: #a6c5e229;
 }

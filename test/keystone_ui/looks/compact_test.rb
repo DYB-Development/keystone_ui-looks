@@ -26,6 +26,12 @@ class KeystoneUi::Looks::CompactTest < Minitest::Test
     assert_equal({ "--ks-spacing" => "0.2rem" }, declarations.slice("--ks-spacing"))
   end
 
+  def test_every_colour_the_look_sets_has_a_dark_partner
+    colours = declarations.keys.grep(/\A--ks-color-/).reject { |name| name.end_with?("-dark") }
+
+    assert_empty colours.reject { |name| declarations.key?("#{name}-dark") }
+  end
+
   private
 
   def declarations
