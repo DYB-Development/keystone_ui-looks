@@ -10,6 +10,10 @@ class KeystoneUi::Looks::CompactTest < Minitest::Test
     assert_nil KeystoneUi::LookCheck.new(looks: { "compact" => FILE }, default: nil).call
   end
 
+  def test_the_look_gives_surfaces_a_small_radius
+    assert_equal({ "--ks-radius-surface" => "3px" }, declarations.slice("--ks-radius-surface"))
+  end
+
   private
 
   def declarations
