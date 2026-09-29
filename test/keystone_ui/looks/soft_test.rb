@@ -18,6 +18,10 @@ class KeystoneUi::Looks::SoftTest < Minitest::Test
     assert_equal({ "--ks-font-body" => "-apple-system, BlinkMacSystemFont, system-ui, sans-serif" }, declarations.slice("--ks-font-body"))
   end
 
+  def test_the_look_draws_faint_borders
+    assert_equal({ "--ks-color-border" => "rgb(0 0 0 / 0.08)" }, declarations.slice("--ks-color-border"))
+  end
+
   private
 
   def declarations
