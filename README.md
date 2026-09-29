@@ -39,6 +39,10 @@ bundle exec rake test
 bin/rubocop
 ```
 
+To add a look, add its file to `app/assets/tailwind/keystone_ui_looks/`, add its
+name to `KeystoneUi::Looks::Engine::LOOKS`, and add a row for it to the table
+above. The gem registers every name on that list at boot.
+
 ## License
 
 MIT
