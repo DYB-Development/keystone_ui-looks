@@ -22,6 +22,10 @@ class KeystoneUi::Looks::CompactTest < Minitest::Test
     assert_equal({ "--ks-border-width" => "1px", "--ks-color-border" => "#dcdfe4" }, declarations.slice("--ks-border-width", "--ks-color-border"))
   end
 
+  def test_the_look_spaces_components_tightly
+    assert_equal({ "--ks-spacing" => "0.2rem" }, declarations.slice("--ks-spacing"))
+  end
+
   private
 
   def declarations
