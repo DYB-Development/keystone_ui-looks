@@ -7,4 +7,8 @@
   --ks-color-accent: #007aff;
   --ks-color-accent-hover: #3395ff;
   --ks-color-on-fill: #ffffff;
+  --ks-color-border-dark: rgb(255 255 255 / 0.12);
+  --ks-color-accent-dark: #0a84ff;
+  --ks-color-accent-hover-dark: #409cff;
+  --ks-color-on-fill-dark: #ffffff;
 }
