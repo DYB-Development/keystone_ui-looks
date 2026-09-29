@@ -1,4 +1,5 @@
 :root[data-look="soft"] {
   --ks-radius-control: 0.75rem;
   --ks-radius-surface: 1rem;
+  --ks-font-body: -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
 }

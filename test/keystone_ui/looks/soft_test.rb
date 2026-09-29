@@ -14,6 +14,10 @@ class KeystoneUi::Looks::SoftTest < Minitest::Test
     assert_equal({ "--ks-radius-surface" => "1rem" }, declarations.slice("--ks-radius-surface"))
   end
 
+  def test_the_look_uses_the_devices_system_font
+    assert_equal({ "--ks-font-body" => "-apple-system, BlinkMacSystemFont, system-ui, sans-serif" }, declarations.slice("--ks-font-body"))
+  end
+
   private
 
   def declarations
