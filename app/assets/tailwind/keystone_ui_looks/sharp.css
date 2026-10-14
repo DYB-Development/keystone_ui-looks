@@ -7,4 +7,6 @@
   --ks-font-weight-medium: 500;
   --ks-shadow-surface: none;
   --ks-shadow-surface-dark: none;
+  --ks-shadow-menu: 0 1px 2px rgb(0 0 0 / 0.08);
+  --ks-shadow-overlay: 0 1px 2px rgb(0 0 0 / 0.08);
 }

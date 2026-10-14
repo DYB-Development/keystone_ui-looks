@@ -34,6 +34,10 @@ class KeystoneUi::Looks::SharpTest < Minitest::Test
     assert_equal({ "--ks-shadow-surface" => "none", "--ks-shadow-surface-dark" => "none" }, declarations.slice("--ks-shadow-surface", "--ks-shadow-surface-dark"))
   end
 
+  def test_the_look_gives_menus_and_overlays_one_thin_shadow
+    assert_equal({ "--ks-shadow-menu" => "0 1px 2px rgb(0 0 0 / 0.08)", "--ks-shadow-overlay" => "0 1px 2px rgb(0 0 0 / 0.08)" }, declarations.slice("--ks-shadow-menu", "--ks-shadow-overlay"))
+  end
+
   private
 
   def declarations
