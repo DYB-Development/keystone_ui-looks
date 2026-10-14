@@ -14,6 +14,10 @@ class KeystoneUi::Looks::SharpTest < Minitest::Test
     assert_equal({ "--ks-radius-control" => "2px" }, declarations.slice("--ks-radius-control"))
   end
 
+  def test_the_look_gives_surfaces_4px_corners
+    assert_equal({ "--ks-radius-surface" => "4px" }, declarations.slice("--ks-radius-surface"))
+  end
+
   private
 
   def declarations
