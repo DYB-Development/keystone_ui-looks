@@ -5,7 +5,7 @@ require "rails"
 module KeystoneUi
   module Looks
     class Engine < ::Rails::Engine
-      LOOKS = %w[brutalist compact rounded soft].freeze
+      LOOKS = %w[brutalist compact rounded sharp soft].freeze
 
       engine_name "keystone_ui_looks_engine"
 

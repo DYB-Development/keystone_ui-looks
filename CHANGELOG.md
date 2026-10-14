@@ -3,6 +3,7 @@
 ## [Unreleased]
 
 ### Added
+- The `sharp` look: 2px corners on controls and badges, 4px corners on cards, tight spacing, medium weights, the system font, no shadow on cards, one thin shadow on menus, and no colours, so the palette sets every colour.
 - The test suite fails, naming the look and the variable, when a look sets a `--ks-` variable the installed keystone_ui-styles does not define, or a colour without its dark partner.
 - CI runs daily against the newest keystone_ui-styles, so a renamed variable there fails the looks gem's CI without a change here.
 

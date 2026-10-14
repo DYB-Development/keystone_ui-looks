@@ -1,0 +1,13 @@
+:root[data-look="sharp"] {
+  --ks-radius-control: 2px;
+  --ks-radius-surface: 4px;
+  --ks-radius-pill: 2px;
+  --ks-spacing: 0.2rem;
+  --ks-font-weight-strong: 500;
+  --ks-font-weight-medium: 500;
+  --ks-shadow-surface: none;
+  --ks-shadow-surface-dark: none;
+  --ks-shadow-menu: 0 1px 2px rgb(0 0 0 / 0.08);
+  --ks-shadow-overlay: 0 1px 2px rgb(0 0 0 / 0.08);
+  --ks-font-body: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+}
