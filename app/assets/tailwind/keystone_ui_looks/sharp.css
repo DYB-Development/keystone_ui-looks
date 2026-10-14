@@ -5,4 +5,6 @@
   --ks-spacing: 0.2rem;
   --ks-font-weight-strong: 500;
   --ks-font-weight-medium: 500;
+  --ks-shadow-surface: none;
+  --ks-shadow-surface-dark: none;
 }

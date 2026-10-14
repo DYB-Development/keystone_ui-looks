@@ -30,6 +30,10 @@ class KeystoneUi::Looks::SharpTest < Minitest::Test
     assert_equal({ "--ks-font-weight-strong" => "500", "--ks-font-weight-medium" => "500" }, declarations.slice("--ks-font-weight-strong", "--ks-font-weight-medium"))
   end
 
+  def test_the_look_gives_surfaces_no_shadow_in_light_and_dark_mode
+    assert_equal({ "--ks-shadow-surface" => "none", "--ks-shadow-surface-dark" => "none" }, declarations.slice("--ks-shadow-surface", "--ks-shadow-surface-dark"))
+  end
+
   private
 
   def declarations
