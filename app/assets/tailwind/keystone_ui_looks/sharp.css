@@ -1,4 +1,5 @@
 :root[data-look="sharp"] {
   --ks-radius-control: 2px;
   --ks-radius-surface: 4px;
+  --ks-radius-pill: 2px;
 }
