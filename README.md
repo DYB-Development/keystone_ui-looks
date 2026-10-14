@@ -26,7 +26,7 @@ or a user or account picks one through keystone_ui-colors.
 | `brutalist` | Square corners, thick black or white borders, bold weights, no shadows, and black on white (white on black on a dark page). |
 | `compact` | Follows Atlassian: small 3px corners, a blue accent, thin light grey borders and tight spacing. |
 | `rounded` | Follows Google's Material: pill-shaped buttons, a purple accent, soft shadows, medium weights and Roboto, falling back to the system sans-serif font when the app does not load Roboto. |
-| `sharp` | Tight and flat, with no colours of its own. |
+| `sharp` | Tight and flat: 2px corners on controls and badges, 4px corners on cards, tight spacing, medium weights, the system font, no shadow on cards, one thin shadow on menus, and no colours of its own, so the palette sets every colour. |
 | `soft` | Follows Apple: large rounded corners, the device's system font, faint borders, wider spacing and a system blue accent. |
 
 A look sets only the component accent variables, so an app's own classes that
