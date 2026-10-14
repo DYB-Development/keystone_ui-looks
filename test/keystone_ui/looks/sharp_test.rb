@@ -38,6 +38,10 @@ class KeystoneUi::Looks::SharpTest < Minitest::Test
     assert_equal({ "--ks-shadow-menu" => "0 1px 2px rgb(0 0 0 / 0.08)", "--ks-shadow-overlay" => "0 1px 2px rgb(0 0 0 / 0.08)" }, declarations.slice("--ks-shadow-menu", "--ks-shadow-overlay"))
   end
 
+  def test_the_look_uses_the_system_interface_font
+    assert_equal({ "--ks-font-body" => 'ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif' }, declarations.slice("--ks-font-body"))
+  end
+
   private
 
   def declarations
