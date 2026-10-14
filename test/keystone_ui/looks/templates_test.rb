@@ -14,4 +14,7 @@ class KeystoneUi::Looks::TemplatesTest < Minitest::Test
 
     assert_equal expected, KeystoneUi::Looks::Templates.all
   end
+  def test_names_the_five_templates
+    assert_equal %i[ocean forest twilight coral arctic], KeystoneUi::Looks::Templates.names
+  end
 end

@@ -49,6 +49,10 @@ module KeystoneUi
       def self.all
         PRESETS
       end
+
+      def self.names
+        PRESETS.keys
+      end
     end
   end
 end
