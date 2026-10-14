@@ -22,6 +22,10 @@ class KeystoneUi::Looks::SharpTest < Minitest::Test
     assert_equal({ "--ks-radius-pill" => "2px" }, declarations.slice("--ks-radius-pill"))
   end
 
+  def test_the_look_spaces_components_tightly
+    assert_equal({ "--ks-spacing" => "0.2rem" }, declarations.slice("--ks-spacing"))
+  end
+
   private
 
   def declarations
