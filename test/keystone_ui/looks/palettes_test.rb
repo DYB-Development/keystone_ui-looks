@@ -15,4 +15,7 @@ class KeystoneUi::Looks::PalettesTest < Minitest::Test
   def test_lists_the_five_surface_scales_by_name
     assert_equal %i[zinc slate gray neutral stone], KeystoneUi::Looks::Palettes::SURFACES.keys
   end
+  def test_reads_a_surface_scale_by_name
+    assert_equal "#3f3f46", KeystoneUi::Looks::Palettes.surface("zinc")[700]
+  end
 end

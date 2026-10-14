@@ -23,6 +23,10 @@ module KeystoneUi
       def self.accent(name)
         ACCENTS.fetch(name.to_sym)
       end
+
+      def self.surface(name)
+        SURFACES[name.to_sym]
+      end
     end
   end
 end
