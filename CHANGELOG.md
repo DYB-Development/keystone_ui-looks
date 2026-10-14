@@ -2,6 +2,8 @@
 
 ## [Unreleased]
 
+## [0.3.0] - 2026-10-14
+
 ### Added
 - The colour catalogue from keystone_ui-colors: six accent and five surface shade scales read by name, a generator that turns a hex colour into a shade scale exactly as keystone_ui-colors does, and the five named colour templates Ocean, Forest, Twilight, Coral and Arctic.
 - The `sharp` look: 2px corners on controls and badges, 4px corners on cards, tight spacing, medium weights, the system font, no shadow on cards, one thin shadow on menus, and no colours, so the palette sets every colour.
