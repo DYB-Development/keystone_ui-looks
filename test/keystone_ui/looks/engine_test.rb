@@ -33,6 +33,12 @@ class KeystoneUi::Looks::EngineTest < Minitest::Test
     assert_equal KeystoneUi::Looks::Engine.root.join("app/assets/tailwind/keystone_ui_looks/compact.css").to_s, KeystoneUi.configuration.looks["compact"]
   end
 
+  def test_booting_registers_the_sharp_look
+    boot
+
+    assert_equal KeystoneUi::Looks::Engine.root.join("app/assets/tailwind/keystone_ui_looks/sharp.css").to_s, KeystoneUi.configuration.looks["sharp"]
+  end
+
   def test_booting_registers_exactly_the_looks_on_the_gems_list
     boot
 
