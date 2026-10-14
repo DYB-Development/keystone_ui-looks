@@ -32,6 +32,25 @@ or a user or account picks one through keystone_ui-colors.
 A look sets only the component accent variables, so an app's own classes that
 read the accent scale keep the accent a user or account picked.
 
+## Colour catalogue
+
+The gem also lists the colours a person or account can choose from.
+
+- `KeystoneUi::Looks::Palettes.accent(:blue)` returns an accent shade scale, a
+  hash of hex colours keyed 50, 100 and 200 through 900, then 950. The accents are
+  `blue`, `emerald`, `cyan`, `indigo`, `violet` and `rose`.
+- `KeystoneUi::Looks::Palettes.surface(:zinc)` returns a surface shade scale.
+  The surfaces are `zinc`, `slate`, `gray`, `neutral` and `stone`.
+- `KeystoneUi::Looks::Palettes.generate_shades("#3b82f6")` turns a six-digit hex
+  colour into a shade scale of the same shape, with the colour itself at 500.
+- `KeystoneUi::Looks::Templates.all` returns the named colour templates `ocean`,
+  `forest`, `twilight`, `coral` and `arctic`, each with an accent, a surface, a
+  background, a text colour, a label and a description.
+  `KeystoneUi::Looks::Templates[:ocean]` returns one of them, and
+  `KeystoneUi::Looks::Templates.names` lists their names.
+
+An unknown accent, surface or template name raises `KeyError`.
+
 ## Development
 
 ```bash
