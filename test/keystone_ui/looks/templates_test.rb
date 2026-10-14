@@ -20,4 +20,7 @@ class KeystoneUi::Looks::TemplatesTest < Minitest::Test
   def test_reads_a_template_by_name
     assert_equal "Ocean", KeystoneUi::Looks::Templates["ocean"][:label]
   end
+  def test_refuses_a_template_it_does_not_have
+    assert_raises(KeyError) { KeystoneUi::Looks::Templates[:default] }
+  end
 end
