@@ -3,6 +3,7 @@
 ## [Unreleased]
 
 ### Added
+- The colour catalogue from keystone_ui-colors: six accent and five surface shade scales read by name, a generator that turns a hex colour into a shade scale exactly as keystone_ui-colors does, and the five named colour templates Ocean, Forest, Twilight, Coral and Arctic.
 - The `sharp` look: 2px corners on controls and badges, 4px corners on cards, tight spacing, medium weights, the system font, no shadow on cards, one thin shadow on menus, and no colours, so the palette sets every colour.
 - The test suite fails, naming the look and the variable, when a look sets a `--ks-` variable the installed keystone_ui-styles does not define, or a colour without its dark partner.
 - CI runs daily against the newest keystone_ui-styles, so a renamed variable there fails the looks gem's CI without a change here.
