@@ -42,6 +42,10 @@ class KeystoneUi::Looks::SharpTest < Minitest::Test
     assert_equal({ "--ks-font-body" => 'ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif' }, declarations.slice("--ks-font-body"))
   end
 
+  def test_the_look_sets_no_colour
+    assert_empty declarations.keys.grep(/\A--ks-color-/)
+  end
+
   private
 
   def declarations
