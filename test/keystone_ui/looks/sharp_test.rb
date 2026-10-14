@@ -6,6 +6,10 @@ require "keystone_ui"
 class KeystoneUi::Looks::SharpTest < Minitest::Test
   FILE = File.expand_path("../../../app/assets/tailwind/keystone_ui_looks/sharp.css", __dir__)
 
+  def test_the_look_passes_keystone_uis_boot_check
+    assert_nil KeystoneUi::LookCheck.new(looks: { "sharp" => FILE }, default: nil).call
+  end
+
   def test_the_look_gives_controls_2px_corners
     assert_equal({ "--ks-radius-control" => "2px" }, declarations.slice("--ks-radius-control"))
   end
