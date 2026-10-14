@@ -26,6 +26,10 @@ class KeystoneUi::Looks::SharpTest < Minitest::Test
     assert_equal({ "--ks-spacing" => "0.2rem" }, declarations.slice("--ks-spacing"))
   end
 
+  def test_the_look_sets_button_and_label_text_in_medium_weight
+    assert_equal({ "--ks-font-weight-strong" => "500", "--ks-font-weight-medium" => "500" }, declarations.slice("--ks-font-weight-strong", "--ks-font-weight-medium"))
+  end
+
   private
 
   def declarations
