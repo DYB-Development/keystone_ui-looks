@@ -25,7 +25,7 @@ module KeystoneUi
       end
 
       def self.surface(name)
-        SURFACES[name.to_sym]
+        SURFACES.fetch(name.to_sym)
       end
     end
   end

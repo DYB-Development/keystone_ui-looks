@@ -18,4 +18,7 @@ class KeystoneUi::Looks::PalettesTest < Minitest::Test
   def test_reads_a_surface_scale_by_name
     assert_equal "#3f3f46", KeystoneUi::Looks::Palettes.surface("zinc")[700]
   end
+  def test_refuses_a_surface_scale_it_does_not_have
+    assert_raises(KeyError) { KeystoneUi::Looks::Palettes.surface(:nope) }
+  end
 end
