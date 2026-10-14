@@ -12,4 +12,7 @@ class KeystoneUi::Looks::PalettesTest < Minitest::Test
   def test_refuses_an_accent_scale_it_does_not_have
     assert_raises(KeyError) { KeystoneUi::Looks::Palettes.accent(:nope) }
   end
+  def test_lists_the_five_surface_scales_by_name
+    assert_equal %i[zinc slate gray neutral stone], KeystoneUi::Looks::Palettes::SURFACES.keys
+  end
 end
