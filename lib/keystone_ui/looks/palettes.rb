@@ -13,7 +13,7 @@ module KeystoneUi
       }.freeze
 
       def self.accent(name)
-        ACCENTS[name.to_sym]
+        ACCENTS.fetch(name.to_sym)
       end
     end
   end

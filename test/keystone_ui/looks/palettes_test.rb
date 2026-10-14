@@ -9,4 +9,7 @@ class KeystoneUi::Looks::PalettesTest < Minitest::Test
   def test_reads_an_accent_scale_by_name
     assert_equal "#2563eb", KeystoneUi::Looks::Palettes.accent("blue")[600]
   end
+  def test_refuses_an_accent_scale_it_does_not_have
+    assert_raises(KeyError) { KeystoneUi::Looks::Palettes.accent(:nope) }
+  end
 end
