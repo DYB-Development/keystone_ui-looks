@@ -15,4 +15,9 @@ class KeystoneUi::Looks::ThemesTest < Minitest::Test
   def test_lists_every_preset_theme
     assert_same KeystoneUi::Looks::Themes::PRESETS, KeystoneUi::Looks::Themes.all
   end
+  def test_labels_each_preset_theme
+    expected = { graphite: "Graphite", harbor: "Harbor", fern: "Fern", terracotta: "Terracotta", heather: "Heather", ledger: "Ledger" }
+
+    assert_equal expected, KeystoneUi::Looks::Themes.all.transform_values { |preset| preset[:label] }
+  end
 end

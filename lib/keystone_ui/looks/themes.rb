@@ -4,12 +4,12 @@ module KeystoneUi
   module Looks
     module Themes
       PRESETS = {
-        graphite: {},
-        harbor: {},
-        fern: {},
-        terracotta: {},
-        heather: {},
-        ledger: {}
+        graphite: { label: "Graphite" },
+        harbor: { label: "Harbor" },
+        fern: { label: "Fern" },
+        terracotta: { label: "Terracotta" },
+        heather: { label: "Heather" },
+        ledger: { label: "Ledger" }
       }.freeze
 
       def self.all
