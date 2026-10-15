@@ -14,6 +14,24 @@ class KeystoneUi::Looks::ThemesTest < Minitest::Test
     font-weight-normal font-weight-medium font-weight-strong font-weight-heading
     shadow-color shadow-opacity shadow-blur shadow-spread shadow-offset-x shadow-offset-y
   ].freeze
+  NUMBER = '-?(?:\d+(?:\.\d+)?|\.\d+)%?'
+  GAP = '(?:\s*,\s*|\s+)'
+  COLOUR = Regexp.union(/\A#(?:\h{3}|\h{4}|\h{6}|\h{8})\z/, /\A(?:rgba?|hsla?|oklch)\(\s*#{NUMBER}#{GAP}#{NUMBER}#{GAP}#{NUMBER}(?:\s*[\/,]\s*#{NUMBER})?\s*\)\z/)
+  UNSIGNED_LENGTH = '(?:0|(?:\d+(?:\.\d+)?|\.\d+)(?:px|rem|em))'
+  LENGTH = /\A#{UNSIGNED_LENGTH}\z/
+  SIGNED_LENGTH = /\A-?#{UNSIGNED_LENGTH}\z/
+  FONT_NAME = "[A-Za-z0-9-]+(?: [A-Za-z0-9-]+)*"
+  FONT = "(?:#{FONT_NAME}|\"#{FONT_NAME}\"|'#{FONT_NAME}')"
+  FONT_LIST = /\A#{FONT}(?:\s*,\s*#{FONT})*\z/
+  WEIGHT = /\A[1-9]00\z/
+  OPACITY = /\A(?:0(?:\.\d+)?|\.\d+|1(?:\.0+)?)\z/
+  PATTERNS = COLOUR_ROLES.to_h { |role| [ role, COLOUR ] }.merge(
+    "radius" => LENGTH, "spacing" => LENGTH, "border-width" => LENGTH, "letter-spacing" => Regexp.union(SIGNED_LENGTH, /\Anormal\z/),
+    "font-sans" => FONT_LIST, "font-serif" => FONT_LIST, "font-mono" => FONT_LIST, "font-heading" => FONT_LIST,
+    "font-weight-normal" => WEIGHT, "font-weight-medium" => WEIGHT, "font-weight-strong" => WEIGHT, "font-weight-heading" => WEIGHT,
+    "shadow-color" => COLOUR, "shadow-opacity" => OPACITY, "shadow-blur" => LENGTH,
+    "shadow-spread" => SIGNED_LENGTH, "shadow-offset-x" => SIGNED_LENGTH, "shadow-offset-y" => SIGNED_LENGTH
+  ).freeze
 
   def test_names_the_six_preset_themes
     assert_equal %i[graphite harbor fern terracotta heather ledger], KeystoneUi::Looks::Themes.names
@@ -53,5 +71,12 @@ class KeystoneUi::Looks::ThemesTest < Minitest::Test
     expected = KeystoneUi::Looks::Themes.names.to_h { |name| [ name, SHAPE_AND_TYPE_ROLES ] }
 
     assert_equal expected, KeystoneUi::Looks::Themes.all.transform_values { |preset| preset[:theme].select { |_role, sides| sides.keys == %w[light] }.keys }
+  end
+  def test_writes_every_value_the_way_its_role_is_checked
+    mismatched = KeystoneUi::Looks::Themes.all.flat_map do |name, preset|
+      preset[:theme].flat_map { |role, sides| sides.reject { |_side, value| value.match?(PATTERNS.fetch(role)) }.map { |side, value| "#{name} #{side} #{role}: #{value}" } }
+    end
+
+    assert_empty mismatched
   end
 end
