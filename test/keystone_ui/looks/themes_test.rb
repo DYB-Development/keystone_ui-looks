@@ -9,6 +9,11 @@ class KeystoneUi::Looks::ThemesTest < Minitest::Test
     border input ring chart-1 chart-2 chart-3 chart-4 chart-5
     sidebar sidebar-foreground sidebar-primary sidebar-primary-foreground sidebar-accent sidebar-accent-foreground sidebar-border sidebar-ring
   ].freeze
+  SHAPE_AND_TYPE_ROLES = %w[
+    radius spacing border-width letter-spacing font-sans font-serif font-mono font-heading
+    font-weight-normal font-weight-medium font-weight-strong font-weight-heading
+    shadow-color shadow-opacity shadow-blur shadow-spread shadow-offset-x shadow-offset-y
+  ].freeze
 
   def test_names_the_six_preset_themes
     assert_equal %i[graphite harbor fern terracotta heather ledger], KeystoneUi::Looks::Themes.names
@@ -43,5 +48,10 @@ class KeystoneUi::Looks::ThemesTest < Minitest::Test
     expected = KeystoneUi::Looks::Themes.names.to_h { |name| [ name, COLOUR_ROLES ] }
 
     assert_equal expected, KeystoneUi::Looks::Themes.all.transform_values { |preset| preset[:theme].to_h.select { |_role, sides| sides.keys == %w[light dark] }.keys }
+  end
+  def test_sets_every_shape_and_type_setting_once
+    expected = KeystoneUi::Looks::Themes.names.to_h { |name| [ name, SHAPE_AND_TYPE_ROLES ] }
+
+    assert_equal expected, KeystoneUi::Looks::Themes.all.transform_values { |preset| preset[:theme].select { |_role, sides| sides.keys == %w[light] }.keys }
   end
 end
