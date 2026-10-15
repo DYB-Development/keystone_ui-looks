@@ -32,6 +32,11 @@ class KeystoneUi::Looks::ThemesTest < Minitest::Test
     "shadow-color" => COLOUR, "shadow-opacity" => OPACITY, "shadow-blur" => LENGTH,
     "shadow-spread" => SIGNED_LENGTH, "shadow-offset-x" => SIGNED_LENGTH, "shadow-offset-y" => SIGNED_LENGTH
   ).freeze
+  SYSTEM_FONTS = [
+    "system-ui", "ui-sans-serif", "ui-serif", "ui-monospace", "ui-rounded", "sans-serif", "serif", "monospace", "cursive",
+    "-apple-system", "BlinkMacSystemFont", "Segoe UI", "Roboto", "Helvetica", "Helvetica Neue", "Arial", "Georgia",
+    "Times New Roman", "Menlo", "Monaco", "Consolas", "Courier New", "SFMono-Regular"
+  ].freeze
 
   def test_names_the_six_preset_themes
     assert_equal %i[graphite harbor fern terracotta heather ledger], KeystoneUi::Looks::Themes.names
@@ -78,5 +83,12 @@ class KeystoneUi::Looks::ThemesTest < Minitest::Test
     end
 
     assert_empty mismatched
+  end
+  def test_names_only_system_fonts
+    fonts = KeystoneUi::Looks::Themes.all.values.flat_map do |preset|
+      preset[:theme].select { |role, _sides| PATTERNS.fetch(role) == FONT_LIST }.values.flat_map { |sides| sides["light"].split(",").map { |font| font.strip.delete("\"'") } }
+    end
+
+    assert_empty fonts.uniq - SYSTEM_FONTS
   end
 end
