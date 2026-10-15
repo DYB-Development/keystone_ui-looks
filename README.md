@@ -51,6 +51,33 @@ The gem also lists the colours a person or account can choose from.
 
 An unknown accent, surface or template name raises `KeyError`.
 
+## Preset themes
+
+The gem lists six complete themes a person or account can pick by name.
+
+- `KeystoneUi::Looks::Themes.all` returns the presets `graphite`, `harbor`,
+  `fern`, `terracotta`, `heather` and `ledger`, each with a label, a
+  one-sentence description and a theme.
+- `KeystoneUi::Looks::Themes[:harbor]` returns one of them, and
+  `KeystoneUi::Looks::Themes.names` lists their names. An unknown name raises
+  `KeyError`.
+
+A preset's theme is keyed by the shadcn role names keystone_ui-preferences
+saves. Each colour role holds a `"light"` and a `"dark"` hex colour. Each shape
+and type setting (radius, spacing, border width, letter spacing, fonts, font
+weights and shadow) holds one `"light"` value. Fonts are system fonts only, so
+every preset works in any app.
+
+- `graphite`: plain greys with a near-black primary and 0.5rem corners.
+- `harbor`: cool blues on a faintly blue page with 0.625rem corners.
+- `fern`: deep leaf greens with serif headings and 0.75rem corners.
+- `terracotta`: warm clay and amber on a cream page, serif headings and 0.375rem corners.
+- `heather`: muted violet and lilac greys with 1rem corners.
+- `ledger`: ink and teal with 0.125rem corners, tight spacing, medium weights and no shadow.
+
+Every text colour has a contrast ratio of at least 4.5 to 1 on the fill it sits
+on, in light and in dark.
+
 ## Development
 
 ```bash
