@@ -37,6 +37,13 @@ class KeystoneUi::Looks::ThemesTest < Minitest::Test
     "-apple-system", "BlinkMacSystemFont", "Segoe UI", "Roboto", "Helvetica", "Helvetica Neue", "Arial", "Georgia",
     "Times New Roman", "Menlo", "Monaco", "Consolas", "Courier New", "SFMono-Regular"
   ].freeze
+  TEXT_ON_FILL = [
+    %w[foreground background], %w[muted-foreground background], %w[card-foreground card], %w[popover-foreground popover],
+    %w[primary-foreground primary], %w[secondary-foreground secondary], %w[muted-foreground muted], %w[accent-foreground accent],
+    %w[destructive-foreground destructive], %w[sidebar-foreground sidebar], %w[sidebar-primary-foreground sidebar-primary],
+    %w[sidebar-accent-foreground sidebar-accent]
+  ].freeze
+  AA_BODY_TEXT = 4.5
 
   def test_names_the_six_preset_themes
     assert_equal %i[graphite harbor fern terracotta heather ledger], KeystoneUi::Looks::Themes.names
@@ -90,5 +97,33 @@ class KeystoneUi::Looks::ThemesTest < Minitest::Test
     end
 
     assert_empty fonts.uniq - SYSTEM_FONTS
+  end
+  def test_keeps_every_text_colour_readable_on_its_fill
+    unreadable = KeystoneUi::Looks::Themes.all.flat_map do |name, preset|
+      %w[light dark].flat_map do |side|
+        TEXT_ON_FILL.filter_map do |text, fill|
+          ratio = contrast(preset[:theme][text][side], preset[:theme][fill][side])
+          "#{name} #{side} #{text} on #{fill}: #{ratio.round(2)}" if ratio < AA_BODY_TEXT
+        end
+      end
+    end
+
+    assert_empty unreadable
+  end
+
+  private
+
+  def contrast(first, second)
+    lighter, darker = [ luminance(first), luminance(second) ].sort.reverse
+    (lighter + 0.05) / (darker + 0.05)
+  end
+
+  def luminance(hex)
+    red, green, blue = hex.delete_prefix("#").scan(/../).map { |pair| linear(pair.to_i(16) / 255.0) }
+    0.2126 * red + 0.7152 * green + 0.0722 * blue
+  end
+
+  def linear(channel)
+    channel <= 0.03928 ? channel / 12.92 : ((channel + 0.055) / 1.055)**2.4
   end
 end
