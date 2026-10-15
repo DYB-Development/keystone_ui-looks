@@ -9,4 +9,7 @@ class KeystoneUi::Looks::ThemesTest < Minitest::Test
   def test_reads_a_preset_theme_by_name
     assert_same KeystoneUi::Looks::Themes::PRESETS[:harbor], KeystoneUi::Looks::Themes["harbor"]
   end
+  def test_refuses_a_preset_theme_it_does_not_have
+    assert_raises(KeyError) { KeystoneUi::Looks::Themes[:ocean] }
+  end
 end

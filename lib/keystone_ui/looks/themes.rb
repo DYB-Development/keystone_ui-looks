@@ -13,7 +13,7 @@ module KeystoneUi
       }.freeze
 
       def self.[](name)
-        PRESETS[name.to_sym]
+        PRESETS.fetch(name.to_sym)
       end
 
       def self.names
