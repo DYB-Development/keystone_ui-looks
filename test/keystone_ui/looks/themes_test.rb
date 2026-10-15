@@ -20,4 +20,16 @@ class KeystoneUi::Looks::ThemesTest < Minitest::Test
 
     assert_equal expected, KeystoneUi::Looks::Themes.all.transform_values { |preset| preset[:label] }
   end
+  def test_describes_each_preset_theme_in_one_sentence
+    expected = {
+      graphite: "Plain greys with a near-black primary and soft medium corners",
+      harbor: "Cool blues on a faintly blue page with rounded corners",
+      fern: "Deep leaf greens with serif headings and generous corners",
+      terracotta: "Warm clay and amber on a cream page with small corners",
+      heather: "Muted violet and soft lilac greys with large rounded corners",
+      ledger: "Tight and sharp ink and teal with small corners, close spacing and no shadow"
+    }
+
+    assert_equal expected, KeystoneUi::Looks::Themes.all.transform_values { |preset| preset[:description] }
+  end
 end
