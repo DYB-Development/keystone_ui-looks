@@ -12,6 +12,10 @@ module KeystoneUi
         ledger: {}
       }.freeze
 
+      def self.all
+        PRESETS
+      end
+
       def self.[](name)
         PRESETS.fetch(name.to_sym)
       end
