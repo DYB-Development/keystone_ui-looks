@@ -2,6 +2,8 @@
 
 ## [Unreleased]
 
+## [0.4.0] - 2026-10-15
+
 ### Added
 - Six preset themes written for this gem, Graphite, Harbor, Fern, Terracotta, Heather and Ledger, each with a label, a one-sentence description, every shadcn colour role in light and dark, and its shape and type, in the shape keystone_ui-preferences saves a theme.
 
