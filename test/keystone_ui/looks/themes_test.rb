@@ -3,6 +3,13 @@
 require "test_helper"
 
 class KeystoneUi::Looks::ThemesTest < Minitest::Test
+  COLOUR_ROLES = %w[
+    background foreground card card-foreground popover popover-foreground primary primary-foreground
+    secondary secondary-foreground muted muted-foreground accent accent-foreground destructive destructive-foreground
+    border input ring chart-1 chart-2 chart-3 chart-4 chart-5
+    sidebar sidebar-foreground sidebar-primary sidebar-primary-foreground sidebar-accent sidebar-accent-foreground sidebar-border sidebar-ring
+  ].freeze
+
   def test_names_the_six_preset_themes
     assert_equal %i[graphite harbor fern terracotta heather ledger], KeystoneUi::Looks::Themes.names
   end
@@ -31,5 +38,10 @@ class KeystoneUi::Looks::ThemesTest < Minitest::Test
     }
 
     assert_equal expected, KeystoneUi::Looks::Themes.all.transform_values { |preset| preset[:description] }
+  end
+  def test_sets_every_colour_role_in_light_and_in_dark
+    expected = KeystoneUi::Looks::Themes.names.to_h { |name| [ name, COLOUR_ROLES ] }
+
+    assert_equal expected, KeystoneUi::Looks::Themes.all.transform_values { |preset| preset[:theme].to_h.select { |_role, sides| sides.keys == %w[light dark] }.keys }
   end
 end
